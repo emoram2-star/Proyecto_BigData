@@ -1,0 +1,16 @@
+Usuarios de prueba
+✅ Administrador
+
+Usuario: admin
+
+Contraseña: admin123
+
+Rol: admin
+
+✅ Usuario normal
+
+Usuario: usuario1
+
+Contraseña: clave123
+
+Rol: user

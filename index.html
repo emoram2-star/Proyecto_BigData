@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Buscador de Normatividad – MinInterior</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- FlexSearch desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
+
+  <!-- Script principal -->
+  <script defer src="search.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Buscador de Normatividad – MinInterior</h1>
+    <p class="subtitle">
+      Proyecto final – Búsqueda de texto sobre documentos convertidos de PDF a JSON
+    </p>
+    <div id="user-info"></div>
+  </header>
+
+  <main>
+    <!-- 🔐 LOGIN -->
+    <section id="login-section" class="card">
+      <h2>Iniciar sesión</h2>
+      <p class="login-text">
+        Ingresa con tu usuario y contraseña para acceder al buscador.
+      </p>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Usuario</label>
+          <input type="text" id="username" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn-primary">Ingresar</button>
+        <p id="login-error" class="error-msg"></p>
+      </form>
+      <p class="hint">
+        Usuarios de prueba:<br />
+        <code>admin / admin123</code>, <code>usuario1 / clave123</code>
+      </p>
+    </section>
+
+    <!-- 🔎 LAYOUT PRINCIPAL (filtros + buscador + resultados) -->
+    <div id="main-layout" class="hidden">
+      <!-- Panel izquierdo de filtros -->
+      <aside id="filters-panel" class="card">
+        <h2>Filtros</h2>
+        <p class="filters-text">
+          Filtra por tipo de norma. Si no seleccionas ninguno, se mostrarán todos los tipos.
+        </p>
+
+        <div class="filter-group">
+          <h3>Tipo de norma</h3>
+          <label class="filter-item">
+            <input type="checkbox" class="filter-type" value="resolucion" checked />
+            Resoluciones
+          </label>
+          <label class="filter-item">
+            <input type="checkbox" class="filter-type" value="decreto" checked />
+            Decretos
+          </label>
+          <label class="filter-item">
+            <input type="checkbox" class="filter-type" value="ley" checked />
+            Leyes
+          </label>
+          <label class="filter-item">
+            <input type="checkbox" class="filter-type" value="tutela" checked />
+            Acciones de tutela
+          </label>
+        </div>
+      </aside>
+
+      <!-- Contenido principal -->
+      <div id="main-content">
+        <section id="search-section" class="card">
+          <label for="search-input">Buscar en los documentos:</label>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Escribe palabras clave (ej: acción de tutela, decreto, etc.)"
+            autocomplete="off"
+          />
+          <p id="status">Cargando índice de documentos...</p>
+        </section>
+
+        <section id="results-section" class="card">
+          <h2>Resultados</h2>
+          <div id="results"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>
+      Datos obtenidos de documentos del Ministerio del Interior (PDF → JSON).  
+      Proyecto académico – Maestría en Analítica de Datos.
+    </small>
+  </footer>
+</body>
+</html>

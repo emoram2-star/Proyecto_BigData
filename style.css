@@ -1,0 +1,242 @@
+/* Reset simple */
+* {
+  box-sizing: border-box;
+}
+
+/* Tipografía y colores base */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f5f8;
+  color: #222;
+}
+
+/* Header */
+header {
+  padding: 1.5rem;
+  text-align: center;
+  background: #283048;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+header .subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+#user-info {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Main layout */
+main {
+  max-width: 1200px;
+  margin: 1.5rem auto 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Tarjetas */
+.card {
+  margin-bottom: 1.5rem;
+  background: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Ocultar secciones: forzar por encima de otros display */
+.hidden {
+  display: none !important;
+}
+
+/* Login */
+#login-section h2 {
+  margin-top: 0;
+}
+
+.login-text {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-group {
+  margin-bottom: 0.8rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #4a6cf7;
+  box-shadow: 0 0 0 1px rgba(74, 108, 247, 0.25);
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+  background: #4a6cf7;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #3b57c4;
+}
+
+.error-msg {
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 0.8rem;
+}
+
+/* Layout principal (filtros + contenido) */
+#main-layout {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Panel izquierdo */
+#filters-panel {
+  flex: 0 0 260px;
+}
+
+.filters-text {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.filter-group h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Contenido principal */
+#main-content {
+  flex: 1 1 auto;
+}
+
+/* Search section */
+#search-section label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+#search-input:focus {
+  border-color: #4a6cf7;
+  box-shadow: 0 0 0 1px rgba(74, 108, 247, 0.25);
+}
+
+#status {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Resultados */
+#results-section h2 {
+  margin-top: 0;
+}
+
+.result-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-item h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.05rem;
+}
+
+.result-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.result-meta a {
+  color: #4a6cf7;
+  text-decoration: none;
+}
+
+.result-meta a:hover {
+  text-decoration: underline;
+}
+
+.result-snippet {
+  margin: 0.4rem 0 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  #main-layout {
+    flex-direction: column;
+  }
+  #filters-panel {
+    flex: 1 1 auto;
+  }
+}
